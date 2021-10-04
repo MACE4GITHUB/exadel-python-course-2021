@@ -34,7 +34,7 @@ class Orders:
         if len(self.__orders) == 0:
             return None
 
-        order_items = [*self.__orders.values()]
+        order_items = sorted([*self.__orders.values()], key=lambda order: order.order_date)
 
         if n_latest is None:
             return order_items
